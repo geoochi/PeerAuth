@@ -130,6 +130,25 @@
             }
         };
 
+        // Function to detect user's preferred language
+        function getPreferredLanguage() {
+            const supportedLanguages = ['en', 'zh-CN'];
+            const browserLanguages = navigator.languages || [navigator.language];
+
+            for (let lang of browserLanguages) {
+                // Check exact match
+                if (supportedLanguages.includes(lang)) {
+                    return lang;
+                }
+                // Check language prefix (e.g., 'zh' for 'zh-CN')
+                const langPrefix = lang.split('-')[0];
+                if (supportedLanguages.includes(langPrefix)) {
+                    return langPrefix;
+                }
+            }
+            return 'en'; // Default to English
+        }
+
         function updateContent(lang) {
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.dataset.i18n;
@@ -142,6 +161,10 @@
                 }
             });
         }
+
+        // Initialize with user's preferred language
+        const preferredLang = getPreferredLanguage();
+        updateContent(preferredLang);
 
         document.getElementById('languageSelect').addEventListener('change', (e) => {
             updateContent(e.target.value);
