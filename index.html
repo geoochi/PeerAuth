@@ -6,14 +6,32 @@
 </head>
 <body class="container mt-5">
     <h1>PeerAuth</h1>
-    
+    <h2>What is this?</h2>
+    <p>Machine learning has become more and more powerful, to the point where a bad actor can take a photo and a voice
+      recording of someone you know, and forge a complete video recording. See the "OmniHuman-1" model developed by ByteDance:<br>
+      <ul>
+      <li><a href="https://x.com/ai_for_success/status/1886685232952435133">discussion on X</a></li>
+      <li><a href="https://omnihuman-lab.github.io/">ByteDance's paper</a></li>
+      </ul>
+    </p>
+    <p>Bad actors can now digitally impersonate someone you love, and trick you into doing things like paying a ransom.</p>
+    <p>To mitigate that risk, I have developed this simple solution where you can setup a unique time-based one-time passcode (TOTP) between any pair of persons.</p>
+    <p>This is how it works:</p>
+    <ol>
+    <li>Two people, Alice and Bob, sit in front of the same computer and open this page;</li>
+    <li>Alice and Bob input their respective names onto the same page, and click "Generate";</li>
+    <li>The page will generate two TOTP QR codes, one for Alice and one for Bob;</li>
+    <li>Alice and Bob scans the respective QR code into a TOTP mobile app, such as Authy or Google Authenticator;</li>
+    <li>In the future, when Alice speaks with Bob over the phone or over video call, and wants to verify the identity of Bob, Alice asks Bob to provide the 6-digit TOTP code from the mobile app. If the code matches what Alice has on her own phone, then Alice has more confidence that she is speaking with the real Bob.</li>
+    </ol>
+    <p>Note that this depends on both Alice's and Bob's phones being secure. If somebody steals Bob's phone and manages to bypass the fingerprint or PIN or facial recognition of Bob's phone, then all bets are off.</p>
     <div class="mb-3">
-        <label for="name1" class="form-label">Name 1</label>
+        <label for="name1" class="form-label">Person 1</label>
         <input type="text" class="form-control" id="name1" required>
     </div>
     
     <div class="mb-3">
-        <label for="name2" class="form-label">Name 2</label>
+        <label for="name2" class="form-label">Person 2</label>
         <input type="text" class="form-control" id="name2" required>
     </div>
     
