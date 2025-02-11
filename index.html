@@ -256,10 +256,7 @@
             });
 
             // Smooth scroll to qrcode1 with animation
-            document.getElementById('qrcode1').scrollIntoView({
-                behavior: 'smooth',
-                block: 'center'
-            });
+            document.getElementById('qrcode1').scrollIntoView(true);
 
             updateOtpDisplay();
             interval = setInterval(updateOtpDisplay, 1000);
