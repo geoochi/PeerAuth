@@ -265,7 +265,7 @@
             });
 
             // Smooth scroll to qrcode1 with animation
-            document.getElementById('label1').scrollIntoView(true);
+            document.getElementById('qrSection').scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
 
             updateOtpDisplay();
             interval = setInterval(updateOtpDisplay, 1000);
