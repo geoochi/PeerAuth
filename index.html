@@ -65,6 +65,10 @@
     <button id="generateBtn" class="btn btn-primary mb-4" disabled data-i18n="generate">Generate</button>
     
     <div id="qrSection" style="display: none;">
+        <p>
+            <span data-i18n="base32secret"></span><br>
+            <span id="secret" class="font-monospace"></span>
+        </p>
         <div class="row justify-content-center gx-0">
             <div class="col-12 col-md-3 gy-5 text-center qr-column">
                 <p><span id="label1"></span><span data-i18n="pleaseScan">, please scan the QR code below:</span></p>
@@ -113,6 +117,7 @@
                 'pleaseScan': ', please scan the QR code below:',
                 'hn': 'Discussion on Hacker News',
                 'srccode': 'Source code of this page on GitHub',
+                'base32secret': 'If you are not able to scan the QR codes below, here is the TOTP secret key encoded as base32, for manual entry into authenticator app:',
             },
             'zh-CN': {
                 'whatIsThis': '这是什么？',
@@ -137,6 +142,7 @@
                 'pleaseScan': '，请扫描以下的二维码：',
                 'hn': 'Hacker News 上的讨论',
                 'srccode': '本页于 GitHub 上的源代码',
+                'base32secret': '假如你无法扫描下面的二维码，你还可以手动输入这个以 base32 编码的 TOTP 密钥到验证器应用里：',
             }
         };
 
@@ -241,6 +247,7 @@
             // Update QR code labels with translations
             document.getElementById('label1').textContent = name2;
             document.getElementById('label2').textContent = name1;
+            document.getElementById('secret').textContent = secret.base32;
 
             document.getElementById('qrSection').style.display = 'block';
             const qrcode1node = document.getElementById('qrcode1');
