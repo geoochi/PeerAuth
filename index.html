@@ -25,6 +25,7 @@
     <div class="language-switcher">
         <select id="languageSelect" class="form-select">
             <option value="en">English</option>
+            <option value="de">Deutsch</option>
             <option value="zh-CN">简体中文</option>
         </select>
     </div>
@@ -143,7 +144,32 @@
                 'hn': 'Hacker News 上的讨论',
                 'srccode': '本页于 GitHub 上的源代码',
                 'base32secret': '假如你无法扫描下面的二维码，你还可以手动输入这个以 base32 编码的 TOTP 密钥到验证器应用里：',
-            }
+            },
+            'de': {
+                'whatIsThis': 'Was ist das hier?',
+                'intro1': 'Maschinelles Lernen ist immer besser geworden so dass es einem kriminellen oder andersartig bösartigem Menschen reicht ein Foto und eine Tonaufnahme einer dir bekannten Person zu nehmen um daraus eine gefälschte Videoaufnahme zu fabrizieren. Siehe dazu auch das "OmniHuman-1"-Modell, das von ByteDance entwickelt wurde:',
+                'discussionLink': 'Diskussion auf X',
+                'paperLink': 'ByteDances Veröffentlichung',
+                'intro2': 'Kriminelle oder anderweitig feindlich gesinnte Menschen können nun von dir geliebte Menschen imitieren und dich übertölpeln und zum Beispiel zur Zahlung von Lösegeld zu bringen.',
+                'solutionDesc': 'Um diese Gefahr abzuschwächen habe ich diese einfache Methode entwickelt bei der ein einzigartiger zeitbasierter Einmalcode (TOTP) zwischen zwei Personen eingerichtet wird.',
+                'howItWorks': 'Und so funktioniert es:',
+                'step1': 'Zwei Menschen, Person A und Person B, sitzen vor dem selben Computer und öffnen diese Webseite;',
+                'step2': 'Sie beide geben ihre Namen (z.B. Alice und Bob) in die entsprechenden Namensfelder ein und klicken auf "Erzeugen";',
+                'step3': 'Die Seite erzeugt nun zwei TOTP QR-Codes: einen für Alice und einen für Bob;',
+                'step4': 'Alice und Bob scannen nun je den angegebenen Code mit ihrer Zweifaktorapp (z.B. Authy oder Google Authenticator);',
+                'step5': 'In zukünftigen Telefonaten oder Videoanrufen könnte Alice nun, um sich der Identität von Bob zu versichern, diesen bitten den aktuellen 6-stelligen Einmalcode vorzulesen. Wenn der Einmalcode dem entspricht was Alice auch in ihrer Zweifaktorapp sieht, kann sie etwas mehr vertrauen darin haben dass sie tatsächlich Bob vor sich hat.',
+                'securityNote': 'Bitte beachten: dieser Mechanismus vertraut darauf dass die Telefone von Alice und Bob sicher sind. Falls es jemand anderem gelingt Bobs Telefon zu entwenden und die Pin, den Fingerabdruckt oder die Gesichtserkennung zu überwinden, kann diese Person auch die Einmalcodes verwenden.',
+                'person1': 'Person A',
+                'person2': 'Person B',
+                'generate': 'Erzeugen',
+                'verificationOTP': 'Einmalcode zur Überprüfung:',
+                'expiresIn': 'Wechselt in ',
+                'seconds': 'Sekunden',
+                'pleaseScan': ', bitte Scanne diesen QR Code ein:',
+                'hn': 'Diskussion auf Hacker News (Englisch)',
+                'srccode': 'Der Quellcode dieser Seite auf GitHub',
+                'base32secret': 'Falls ihr die QR Codes nicht einscannen könnt, ist hier der geheime Schlüssel als Base32 für die manuelle Eingabe in die Zweifaktorapp:',
+            },
         };
 
         // Function to detect user's preferred language
