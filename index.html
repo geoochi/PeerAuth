@@ -164,7 +164,7 @@
                 'generate': 'Erzeugen',
                 'verificationOTP': 'Einmalcode zur Überprüfung:',
                 'expiresIn': 'Wechselt in ',
-                'seconds': 'Sekunden',
+                'seconds': ' Sekunden',
                 'pleaseScan': ', bitte Scanne diesen QR Code ein:',
                 'hn': 'Diskussion auf Hacker News (Englisch)',
                 'srccode': 'Der Quellcode dieser Seite auf GitHub',
@@ -174,7 +174,7 @@
 
         // Function to detect user's preferred language
         function getPreferredLanguage() {
-            const supportedLanguages = ['en', 'zh-CN'];
+            const supportedLanguages = ['en', 'de', 'zh-CN'];
             const browserLanguages = navigator.languages || [navigator.language];
 
             for (let lang of browserLanguages) {
