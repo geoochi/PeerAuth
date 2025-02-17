@@ -264,7 +264,7 @@
                 if (!totp1) return;
                 
                 const now = Math.floor(Date.now() / 1000);
-                const remaining = 30 - (now % 30);
+                const remaining = period - (now % period);
                 
                 document.getElementById('otpDisplay1').textContent = totp1.generate();
                 document.getElementById('countdown').textContent = remaining;
