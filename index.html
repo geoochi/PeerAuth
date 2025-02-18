@@ -245,7 +245,7 @@
 
             totp1 = new OTPAuth.TOTP({
                 issuer,
-                label: encodeURIComponent(name1),
+                label: encodeURIComponent(name2),
                 algorithm,
                 digits,
                 period,
@@ -253,7 +253,7 @@
             });
             totp2 = new OTPAuth.TOTP({
                 issuer,
-                label: encodeURIComponent(name2),
+                label: encodeURIComponent(name1),
                 algorithm,
                 digits,
                 period,
@@ -271,8 +271,8 @@
             }
 
             // Update QR code labels with translations
-            document.getElementById('label1').textContent = name2;
-            document.getElementById('label2').textContent = name1;
+            document.getElementById('label1').textContent = name1;
+            document.getElementById('label2').textContent = name2;
             document.getElementById('secret').textContent = secret.base32;
 
             document.getElementById('qrSection').style.display = 'block';
