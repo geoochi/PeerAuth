@@ -217,7 +217,7 @@
         // Initialize with user's preferred language
         const preferredLang = getPreferredLanguage();
         updateContent(preferredLang);
-
+        document.getElementById('languageSelect').value = preferredLang;
         document.getElementById('languageSelect').addEventListener('change', (e) => {
             updateContent(e.target.value);
         });
