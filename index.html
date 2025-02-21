@@ -279,7 +279,8 @@
             document.getElementById('label2').textContent = name2;
             document.getElementById('secret').textContent = secret.base32;
 
-            document.getElementById('qrSection').style.display = 'block';
+            const qrSectionNode = document.getElementById('qrSection')
+            qrSectionNode.style.display = 'block';
             const qrcode1node = document.getElementById('qrcode1');
             const qrcode2node = document.getElementById('qrcode2');
             for (node of [qrcode1node, qrcode2node]) {
@@ -287,14 +288,14 @@
                     node.removeChild(node.lastElementChild);
                 }
             }
-            new QRCode(document.getElementById('qrcode1'), {
+            new QRCode(qrcode1node, {
                 text: totp1.toString(),
                 width: 200,
                 height: 200,
                 correctLevel: QRCode.CorrectLevel.H
             });
 
-            new QRCode(document.getElementById('qrcode2'), {
+            new QRCode(qrcode2node, {
                 text: totp2.toString(),
                 width: 200,
                 height: 200,
@@ -302,7 +303,7 @@
             });
 
             // Smooth scroll to qrcode1 with animation
-            document.getElementById('qrSection').scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
+            qrSectionNode.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
 
             updateOtpDisplay();
             interval = setInterval(updateOtpDisplay, 1000);
