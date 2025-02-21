@@ -29,17 +29,17 @@
             <option value="zh-CN">简体中文</option>
         </select>
     </div>
-    
+
     <h1>PeerAuth</h1>
     <h2 data-i18n="whatIsThis">What is this?</h2>
     <p data-i18n="intro1">
         Machine learning has become more and more powerful, to the point where a bad actor can take a photo and a voice
         recording of someone you know, and forge a complete video recording. See the "OmniHuman-1" model developed by ByteDance:<br>
-        <ul>
-            <li><a href="https://x.com/ai_for_success/status/1886685232952435133" data-i18n="discussionLink">discussion on X</a></li>
-            <li><a href="https://omnihuman-lab.github.io/" data-i18n="paperLink">ByteDance's paper</a></li>
-        </ul>
     </p>
+    <ul>
+        <li><a href="https://x.com/ai_for_success/status/1886685232952435133" data-i18n="discussionLink">discussion on X</a></li>
+        <li><a href="https://omnihuman-lab.github.io/" data-i18n="paperLink">ByteDance's paper</a></li>
+    </ul>
     <p data-i18n="intro2">Bad actors can now digitally impersonate someone you love, and trick you into doing things like paying a ransom.</p>
     <p data-i18n="solutionDesc">To mitigate that risk, I have developed this simple solution where you can setup a unique time-based one-time passcode (TOTP) between any pair of persons.</p>
     <p data-i18n="howItWorks">This is how it works:</p>
@@ -57,14 +57,14 @@
         <label for="name1" class="form-label" data-i18n="person1">Person 1</label>
         <input type="text" class="form-control" id="name1" required>
     </div>
-    
+
     <div class="mb-3">
         <label for="name2" class="form-label" data-i18n="person2">Person 2</label>
         <input type="text" class="form-control" id="name2" required>
     </div>
-    
+
     <button id="generateBtn" class="btn btn-primary mb-4" disabled data-i18n="generate">Generate</button>
-    
+
     <div id="qrSection" style="display: none;">
         <p>
             <span data-i18n="base32secret"></span><br>
@@ -80,7 +80,7 @@
                 <div id="qrcode2" class="d-flex justify-content-center"></div>
             </div>
         </div>
-        
+
         <div class="mt-4">
             <h4 data-i18n="verificationOTP">Verification OTP:</h4>
             <p id="otpDisplay1" class="h2"></p>
@@ -224,7 +224,7 @@
         inputs.forEach(input => {
             input.addEventListener('input', () => {
                 generateBtn.disabled = !(
-                    document.getElementById('name1').value && 
+                    document.getElementById('name1').value &&
                     document.getElementById('name2').value
                 );
             });
@@ -236,7 +236,7 @@
             const name1 = document.getElementById('name1').value;
             const name2 = document.getElementById('name2').value;
             const lang = document.getElementById('languageSelect').value;
-            
+
             const secret = new OTPAuth.Secret({ size: 20 });
             const algorithm = 'SHA1';
             const issuer = 'PeerAuth';
@@ -262,10 +262,10 @@
 
             function updateOtpDisplay() {
                 if (!totp1) return;
-                
+
                 const now = Math.floor(Date.now() / 1000);
                 const remaining = period - (now % period);
-                
+
                 document.getElementById('otpDisplay1').textContent = totp1.generate();
                 document.getElementById('countdown').textContent = remaining;
             }
@@ -289,7 +289,7 @@
                 height: 200,
                 correctLevel: QRCode.CorrectLevel.H
             });
-            
+
             new QRCode(document.getElementById('qrcode2'), {
                 text: totp2.toString(),
                 width: 200,
