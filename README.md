@@ -1,1 +1,1 @@
-Try it live https://ksze.github.io/PeerAuth
+Try it live https://geoochi.github.io/PeerAuth
