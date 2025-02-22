@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import * as OTPAuth from 'otpauth'
 import QRCode from 'qrcode'
 
-const QrSection = () => {
+const QrSection: React.FC = () => {
   const { t } = useTranslation()
   const [name1, setName1] = useState('')
   const [name2, setName2] = useState('')

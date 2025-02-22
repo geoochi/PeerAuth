@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
-const Article = () => {
+const Article: React.FC = () => {
   const { t } = useTranslation()
   return (
     <>

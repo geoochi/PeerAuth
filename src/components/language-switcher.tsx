@@ -1,12 +1,9 @@
 import i18n from 'i18next'
 
-const LanguageSwitcher = ({
-  selectedLanguage,
-  setSelectedLanguage,
-}: {
+const LanguageSwitcher: React.FC<{
   selectedLanguage: string
   setSelectedLanguage: (language: string) => void
-}) => {
+}> = ({ selectedLanguage, setSelectedLanguage }) => {
   return (
     <div className='language-switcher'>
       <select

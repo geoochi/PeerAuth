@@ -18,7 +18,7 @@ i18n.use(initReactI18next).init({
   },
 })
 
-const App = () => {
+const App: React.FC = () => {
   const [selectedLanguage, setSelectedLanguage] = useState('en')
 
   useEffect(() => {
