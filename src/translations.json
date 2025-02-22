@@ -1,0 +1,83 @@
+{
+  "en": {
+    "translation": {
+      "whatIsThis": "What is this?",
+      "intro1": "Machine learning has become more and more powerful, to the point where a bad actor can take a photo and a voice recording of someone you know, and forge a complete video recording. See the \"OmniHuman-1\" model developed by ByteDance:",
+      "discussionLink": "discussion on X",
+      "paperLink": "ByteDance\"s paper",
+      "intro2": "Bad actors can now digitally impersonate someone you love, and trick you into doing things like paying a ransom.",
+      "solutionDesc": "To mitigate that risk, I have developed this simple solution where you can setup a unique time-based one-time passcode (TOTP) between any pair of persons.",
+      "howItWorks": "This is how it works:",
+      "step1": "Two people, Person A and Person B, sit in front of the same computer and open this page;",
+      "step2": "They input their respective names (e.g. Alice and Bob) onto the same page, and click \"Generate\";",
+      "step3": "The page will generate two TOTP QR codes, one for Alice and one for Bob;",
+      "step4": "Alice and Bob scan the respective QR code into a TOTP mobile app (such as Authy or Google Authenticator) on their respective mobile phones;",
+      "step5": "In the future, when Alice speaks with Bob over the phone or over video call, and wants to verify the identity of Bob, Alice asks Bob to provide the 6-digit TOTP code from the mobile app. If the code matches what Alice has on her own phone, then Alice has more confidence that she is speaking with the real Bob.",
+      "securityNote": "Note that this depends on both Alice\"s and Bob\"s phones being secure. If somebody steals Bob\"s phone and manages to bypass the fingerprint or PIN or facial recognition of Bob\"s phone, then all bets are off.",
+      "person1": "Person A",
+      "person2": "Person B",
+      "generate": "Generate",
+      "verificationOTP": "Verification OTP",
+      "expiresIn": "Expires in ",
+      "seconds": " seconds",
+      "pleaseScan": ", please scan the QR code below:",
+      "hn": "Discussion on Hacker News",
+      "srccode": "Source code of this page on GitHub",
+      "base32secret": "If you are not able to scan the QR codes below, here is the TOTP secret key encoded as base32, for manual entry into authenticator app:"
+    }
+  },
+  "zh-CN": {
+    "translation": {
+      "whatIsThis": "这是什么？",
+      "intro1": "机器学习技术日益强大，甚至能让不法分子利用一张照片和一段录音，伪造出完整的视频记录。例如，字节跳动开发的“OmniHuman-1”模型就能实现这一点：",
+      "discussionLink": "X上的讨论",
+      "paperLink": "字节跳动的论文",
+      "intro2": "如今，这些恶意行为者能够数字化地冒充你所爱的人，诱骗你做出诸如支付赎金等行为。",
+      "solutionDesc": "为了降低这种风险，我开发了一个简单的解决方案，让任何两个人之间可以设置一个基于时间的独特一次性密码（TOTP）。",
+      "howItWorks": "工作原理如下：",
+      "step1": "两个人，甲方和乙方，坐在同一台电脑前打开本页面；",
+      "step2": "两人在同一页面上输入各自的名字（例如小明和小红），然后点击 \"生成\"；",
+      "step3": "页面将生成两个TOTP二维码，分别对应小明和小红；",
+      "step4": "小明和小红用各自的手机验证器应用（如 Authy、微软身份验证器、腾讯身份验证器）扫描对应的二维码；",
+      "step5": "将来，当小明通过电话或视频与小红交谈，并想验证小红的身份时，小明可以要求小红提供手机应用中的6位数TOTP代码。如果代码与小明自己手机上的匹配，那么小明就能更有信心确认自己正在与真正的小红交谈。",
+      "securityNote": "请注意这需要小明和小红的手机都保持安全。如果有人窃取了小红的手机，并成功绕过了指纹、PIN码或面部识别等安全措施，那么这一保护机制将失效。",
+      "person1": "甲方",
+      "person2": "乙方",
+      "generate": "生成",
+      "verificationOTP": "验证码",
+      "expiresIn": "剩余时间 ",
+      "seconds": " 秒",
+      "pleaseScan": "，请扫描以下的二维码：",
+      "hn": "Hacker News 上的讨论",
+      "srccode": "本页于 GitHub 上的源代码",
+      "base32secret": "假如你无法扫描下面的二维码，你还可以手动输入这个以 base32 编码的 TOTP 密钥到验证器应用里："
+    }
+  },
+  "de": {
+    "translation": {
+      "whatIsThis": "Was ist das hier?",
+      "intro1": "Maschinelles Lernen ist immer besser geworden so dass es einem kriminellen oder andersartig bösartigem Menschen reicht ein Foto und eine Tonaufnahme einer dir bekannten Person zu nehmen um daraus eine gefälschte Videoaufnahme zu fabrizieren. Siehe dazu auch das \"OmniHuman-1\"-Modell, das von ByteDance entwickelt wurde:",
+      "discussionLink": "Diskussion auf X",
+      "paperLink": "ByteDances Veröffentlichung",
+      "intro2": "Kriminelle oder anderweitig feindlich gesinnte Menschen können nun von dir geliebte Menschen imitieren und dich übertölpeln und zum Beispiel zur Zahlung von Lösegeld zu bringen.",
+      "solutionDesc": "Um diese Gefahr abzuschwächen habe ich diese einfache Methode entwickelt bei der ein einzigartiger zeitbasierter Einmalcode (TOTP) zwischen zwei Personen eingerichtet wird.",
+      "howItWorks": "Und so funktioniert es:",
+      "step1": "Zwei Menschen, Person A und Person B, sitzen vor dem selben Computer und öffnen diese Webseite;",
+      "step2": "Sie beide geben ihre Namen (z.B. Alice und Bob) in die entsprechenden Namensfelder ein und klicken auf \"Erzeugen\";",
+      "step3": "Die Seite erzeugt nun zwei TOTP QR-Codes: einen für Alice und einen für Bob;",
+      "step4": "Alice und Bob scannen nun je den angegebenen Code mit ihrer Zweifaktorapp (z.B. Authy oder Google Authenticator);",
+      "step5": "In zukünftigen Telefonaten oder Videoanrufen könnte Alice nun, um sich der Identität von Bob zu versichern, diesen bitten den aktuellen 6-stelligen Einmalcode vorzulesen. Wenn der Einmalcode dem entspricht was Alice auch in ihrer Zweifaktorapp sieht, kann sie etwas mehr vertrauen darin haben dass sie tatsächlich Bob vor sich hat.",
+      "securityNote": "Bitte beachten: dieser Mechanismus vertraut darauf dass die Telefone von Alice und Bob sicher sind. Falls es jemand anderem gelingt Bobs Telefon zu entwenden und die Pin, den Fingerabdruckt oder die Gesichtserkennung zu überwinden, kann diese Person auch die Einmalcodes verwenden.",
+      "person1": "Person A",
+      "person2": "Person B",
+      "generate": "Erzeugen",
+      "verificationOTP": "Einmalcode zur Überprüfung",
+      "expiresIn": "Wechselt in ",
+      "seconds": " Sekunden",
+      "pleaseScan": ", bitte Scanne diesen QR Code ein:",
+      "hn": "Diskussion auf Hacker News (Englisch)",
+      "srccode": "Der Quellcode dieser Seite auf GitHub",
+      "base32secret": "Falls ihr die QR Codes nicht einscannen könnt, ist hier der geheime Schlüssel als Base32 für die manuelle Eingabe in die Zweifaktorapp:"
+    }
+  }
+}
