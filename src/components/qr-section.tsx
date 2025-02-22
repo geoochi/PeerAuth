@@ -11,15 +11,15 @@ const QrSection: React.FC = () => {
   const [url2, setUrl2] = useState('')
   const [otp, setOtp] = useState('')
   const [remaining, setRemaining] = useState(-1)
-  const [secretString, setSecretString] = useState('')
+  const [secret, setSecret] = useState('')
   const [qrSectionDisplay, setQrSectionDisplay] = useState(false)
   const [intervalNumber, setIntervalNumber] = useState<NodeJS.Timeout | null>(
     null
   )
 
   const generateHandler = async () => {
-    const secret = new OTPAuth.Secret({ size: 20 })
-    setSecretString(secret.base32)
+    const secret = new OTPAuth.Secret({ size: 20 }).base32
+    setSecret(secret)
     const totp1 = new OTPAuth.TOTP({
       issuer: 'PeerAuth',
       label: encodeURIComponent(name2),
@@ -127,7 +127,7 @@ const QrSection: React.FC = () => {
           </div>
           <p>{t('base32secret')}</p>
           <p id='secret' className='font-monospace'>
-            {secretString}
+            {secret}
           </p>
           <br />
         </div>
