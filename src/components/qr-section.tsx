@@ -22,7 +22,7 @@ const QrSection: React.FC = () => {
     setSecretString(secret.base32)
     const totp1 = new OTPAuth.TOTP({
       issuer: 'PeerAuth',
-      label: encodeURIComponent(name1),
+      label: encodeURIComponent(name2),
       algorithm: 'SHA1',
       digits: 6,
       period: 30,
@@ -30,7 +30,7 @@ const QrSection: React.FC = () => {
     })
     const totp2 = new OTPAuth.TOTP({
       issuer: 'PeerAuth',
-      label: encodeURIComponent(name2),
+      label: encodeURIComponent(name1),
       algorithm: 'SHA1',
       digits: 6,
       period: 30,
