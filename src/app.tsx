@@ -7,7 +7,7 @@ import { initReactI18next } from 'react-i18next'
 import { getPreferredLanguage } from './utils'
 import translations from './translations.json'
 import Article from './components/article'
-import QrSection from './components/qrSection'
+import QrSection from './components/qr-section'
 
 i18n.use(initReactI18next).init({
   resources: translations,
