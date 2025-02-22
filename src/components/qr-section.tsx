@@ -9,10 +9,10 @@ const QrSection: React.FC = () => {
   const [name2, setName2] = useState('')
   const [url1, setUrl1] = useState('')
   const [url2, setUrl2] = useState('')
-  const [otp, setOtp] = useState('')
+  const [token, setToken] = useState('')
   const [remaining, setRemaining] = useState(-1)
   const [secret, setSecret] = useState('')
-  const [qrSectionDisplay, setQrSectionDisplay] = useState(false)
+  const [isDisplay, setIsDisplay] = useState(false)
   const [intervalNumber, setIntervalNumber] = useState<NodeJS.Timeout | null>(
     null
   )
@@ -41,11 +41,11 @@ const QrSection: React.FC = () => {
     function updateOtpDisplay() {
       const now = Math.floor(Date.now() / 1000)
       const remaining = totp1.period - (now % totp1.period)
-      setOtp(`${totp1.generate()}`)
+      setToken(`${totp1.generate()}`)
       setRemaining(remaining)
     }
     updateOtpDisplay()
-    setQrSectionDisplay(true)
+    setIsDisplay(true)
     if (intervalNumber) clearInterval(intervalNumber)
     setIntervalNumber(setInterval(updateOtpDisplay, 1000))
   }
@@ -92,7 +92,7 @@ const QrSection: React.FC = () => {
         </div>
       </div>
       <br />
-      {qrSectionDisplay && (
+      {isDisplay && (
         <div id='qrSection'>
           <div className='row'>
             <div className='col mb-5 text-center align-content-center qr-column'>
@@ -116,7 +116,7 @@ const QrSection: React.FC = () => {
             <div className='col mb-5 text-center align-content-center qr-column'>
               <h4>{t('verificationOTP')}</h4>
               <p id='otpDisplay1' className='h2'>
-                {otp}
+                {token}
               </p>
               <p>
                 <span>{t('expiresIn')}</span>
